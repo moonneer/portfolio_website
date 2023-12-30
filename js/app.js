@@ -36,6 +36,22 @@ function PageTransitions() {
          }
 
     })
+
+    const themeBtn = document.querySelector('.theme-btn');
+    themeBtn.addEventListener('click', () => {
+        let element = document.body;
+        let name = document.querySelector(".change"); // Fix: Use querySelector instead of getElementsByClassName
+
+        element.classList.toggle('light-mode');
+        
+        // Check if the body has the 'light-mode' class
+        if (element.classList.contains('light-mode')) {
+            name.style.color = '#f56692'; // Change text color to #f56692
+        } else {
+            // Reset to the default color (you can set it to the original color)
+            name.style.color = ''; 
+        }
+    })
 }
 
 PageTransitions();
